@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediSync Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Medi<span>Sync</span> </h2>
+        <form  onsubmit="userIdentification(event)">
+            <label for="usertype">Login As:</label>
+            <select id="usertype">
+                <option value="">--Please choose an option--</option>
+                <option value="doctor">Doctor</option>
+                <option value="patient">Patient</option>
+            </select>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Ex: Sharique" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Ex: Strong_Password@321" required>
+            <input type="submit" class="auth">
+        </form>
+    </div>
+    <script>
+        function userIdentification(event) {
+            event.preventDefault();
+            var user = document.getElementById('usertype').value; // Fixed the ID reference
+            // console.log(user);
+            // console.log("hi");/
+            if(user === "doctor")
+            {
+                window.location.href = 'doctor.html'
+            }
+            else
+            {
+                window.location.href = 'patient.html'
+            }
+        }
+    </script>
+</body>
+
+</html>
